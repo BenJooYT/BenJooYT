@@ -2,7 +2,7 @@
 
 Java / Kotlin developer building Minecraft gameplay systems, Android games, and small AI tools. Most of my work is systems-heavy stuff I actually run and play with — dungeon generators, game loops, overlays, keyboards.
 
-> Rows marked 🔒 **Private** live in private repos, so the source isn't browsable — they're listed on description only.
+> 🔒 marks a private repo — no public link, so the description below is all there is to see.
 
 **Quick nav:** [Featured](#-featured-projects) · [Stack](#-technologies) · [Now](#-currently-working-on) · [Links](#-links)
 
@@ -27,12 +27,12 @@ Java / Kotlin developer building Minecraft gameplay systems, Android games, and 
 | **BaritoneExtras** 🔒 Private — client-side Forge companion mod for Baritone | Automation loops and task chains on top of Baritone's pathfinder: loop-mining, obtain-chains (loot → mine → craft → smelt), farm/replant, inventory helpers, plus a point-and-click GUI. Server only ever sees normal player packets. | Java 21 · Forge 1.21.9 · Baritone API | 🛠️ In development — most recent pushes, Sep 2026 |
 | [**android-ai-ime**](https://github.com/BenJooYT/android-ai-ime) — AI-powered Android keyboard | Compose IME with conversation memory, switchable providers (CheaperInference), Room persistence, Hilt DI, privacy onboarding. | Kotlin · Compose · Room · Hilt · Retrofit | 🧪 Early / experimental |
 
-**Also tinkering:** [**open-jarvis**](https://github.com/BenJooYT/open-jarvis) — a fork of [`tokenarc/open-jarvis`](https://github.com/tokenarc/open-jarvis) (Android AI agent) where I've been fixing CI/build issues so the APK actually compiles. Not my original project, keeping it honest.
+**Also tinkering:** [**open-jarvis**](https://github.com/BenJooYT/open-jarvis) — a fork of [`tokenarc/open-jarvis`](https://github.com/tokenarc/open-jarvis) (Android AI agent) where I've been fixing CI/build issues so the APK actually compiles. A fork, not my original project.
 
-**Parked idea:** [**yt-dlp-test**](https://github.com/BenJooYT/yt-dlp-test) — intended as an Android app for downloading videos via yt-dlp. Public repo, but honestly: it's empty, no code yet.
+**Parked idea:** [**yt-dlp-test**](https://github.com/BenJooYT/yt-dlp-test) — intended as an Android app for downloading videos via yt-dlp. The repo is public but currently empty — no code yet.
 
 <details>
-<summary><b>Dung — what's actually built (verified from the repo)</b></summary>
+<summary><b>Dung — what's inside</b></summary>
 
 - Floor gen: branching room graph, BFS-farthest room = boss, shop/treasure/elite/secret placement; 800/800 connectivity harness green
 - Combat: DMG/DEF/CRIT + mana recomputed SkyBlock-style from gear; rarity `COMMON → MYTHIC`; per-item Combat Power used for difficulty scaling
@@ -44,7 +44,7 @@ Java / Kotlin developer building Minecraft gameplay systems, Android games, and 
 </details>
 
 <details>
-<summary><b>BaritoneExtras — what's actually built (private repo, described from source)</b></summary>
+<summary><b>BaritoneExtras — what's inside</b></summary>
 
 - Client-side only: `/bextra` commands (mine, get, farm, goto, …) + GUI screens, all tab-completed, no server mod needed
 - Automation: `MiningLoop`, `ObtainTask` (chests → mine → craft with placed table → smelt with placed furnace), `FarmLoop` + replant, `VeinMiner`, `TunnelTask`, `SchematicBuilder`
@@ -54,7 +54,7 @@ Java / Kotlin developer building Minecraft gameplay systems, Android games, and 
 </details>
 
 <details>
-<summary><b>BSnake — what's actually built (verified from the repo)</b></summary>
+<summary><b>BSnake — what's inside</b></summary>
 
 - Modes: Arcade (bosses, progression, 3 cameras) + Classic (screen-filling board, static camera)
 - Bosses: CHASER, WALL_BUILDER (wall-capture by closed loop), HEALER, MIRROR (control-flipping fruit); spawn gap scales 100 → 400; cinematic death sequence + upgrade-card draft
@@ -68,7 +68,7 @@ Java / Kotlin developer building Minecraft gameplay systems, Android games, and 
 
 ## 🛠️ Technologies
 
-Based on what's actually in my repos — not a wishlist.
+My working stack:
 
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white)
 ![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?style=flat-square&logo=kotlin&logoColor=white)
@@ -98,4 +98,4 @@ Based on what's actually in my repos — not a wishlist.
 - GitHub: **[@BenJooYT](https://github.com/BenJooYT)**
 - Pinned starting points: [Dung](https://github.com/BenJooYT/Dung) · [BSnake](https://github.com/BenJooYT/BSnake) · [external-mctool](https://github.com/BenJooYT/external-mctool) · [android-ai-ime](https://github.com/BenJooYT/android-ai-ime)
 
-_No email, site, or socials listed here — if it's not linked from this profile or a repo, it's not mine to advertise._
+_Just GitHub — no email, site, or socials listed._
