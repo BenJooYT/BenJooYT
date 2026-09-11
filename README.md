@@ -2,7 +2,7 @@
 
 Java / Kotlin developer building Minecraft gameplay systems, Android games, and small AI tools. Most of my work is systems-heavy stuff I actually run and play with — dungeon generators, game loops, overlays, keyboards.
 
-> No Roblox repos on this account (yet). Rows marked 🔒 **Private** live in private repos, so the source isn't browsable — they're listed on description only.
+> Rows marked 🔒 **Private** live in private repos, so the source isn't browsable — they're listed on description only.
 
 **Quick nav:** [Featured](#-featured-projects) · [Stack](#-technologies) · [Now](#-currently-working-on) · [Links](#-links)
 
@@ -81,8 +81,6 @@ Based on what's actually in my repos — not a wishlist.
 - **Minecraft:** Paper 1.21.x plugins (Java 21) · Fabric + Forge client mods · WorldEdit structures
 - **Android:** Canvas custom rendering + game loops · Compose UI · IME services · Room / DataStore / Hilt / Retrofit
 - **Desktop/tooling:** .NET 8 WinForms overlays · world-to-screen projection math · GitHub Actions APK builds
-
-_No Lua/Luau on this account right now — if a Roblox project lands here, it'll show up in Featured._
 
 ---
 
