@@ -21,8 +21,8 @@ Minecraft developer building server-side gameplay systems, client mods, and tool
 
 | Project | What it is | Stack | Status |
 |---|---|---|---|
-| [**Dung**](https://github.com/BenJooYT/Dung) — room-based dungeon roguelite for Paper 1.21.x | Branching Isaac-style floors (random-walk gen, locked-until-cleared rooms, boss per floor), SkyBlock-style stats/loot, parties, persistent coins/upgrades. Two telegraphed bosses (Warden, Grovekeeper), rarity-scaled gear with mana-gated abilities. | Java 21 · Paper API · Gradle · JUnit | 🛠️ In development — v1.5.1, last active Sep 2026 |
-| **BaritoneExtras** 🔒 Private — client-side Forge companion mod for Baritone | Automation loops and task chains on top of Baritone's pathfinder: loop-mining, obtain-chains (loot → mine → craft → smelt), farm/replant, inventory helpers, plus a point-and-click GUI. Server only ever sees normal player packets. | Java 21 · Forge 1.21.9 · Baritone API | 🛠️ In development — most recent pushes, Sep 2026 |
+| [**Dung**](https://github.com/BenJooYT/Dung) — room-based dungeon roguelite for Paper 1.21.x | Branching Isaac-style floors (random-walk gen, locked-until-cleared rooms, boss per floor), SkyBlock-style stats/loot, parties, persistent coins/upgrades. Two telegraphed bosses (Warden, Grovekeeper), rarity-scaled gear with mana-gated abilities. | Java 21 · Paper API · Gradle · JUnit | 🛠️ In development |
+| **BaritoneExtras** 🔒 Private — client-side Forge companion mod for Baritone | Automation loops and task chains on top of Baritone's pathfinder: loop-mining, obtain-chains (loot → mine → craft → smelt), farm/replant, inventory helpers, plus a point-and-click GUI. Server only ever sees normal player packets. | Java 21 · Forge (1.21.x) · Baritone API | 🛠️ In development |
 | [**external-mctool**](https://github.com/BenJooYT/external-mctool) — block scanner: Fabric mod + external overlay | Fabric client mod scans an 8-chunk radius for watched block IDs and streams matches + camera data as JSON over `127.0.0.1:25566`; a C# WinForms app draws a transparent click-through overlay. Personal singleplayer project. | Java (Fabric) · C# (.NET 8 WinForms) | 🧪 Working prototype |
 
 <details>
@@ -43,14 +43,14 @@ Minecraft developer building server-side gameplay systems, client mods, and tool
 - Client-side only: `/bextra` commands (mine, get, farm, goto, …) + GUI screens, all tab-completed, no server mod needed
 - Automation: `MiningLoop`, `ObtainTask` (chests → mine → craft with placed table → smelt with placed furnace), `FarmLoop` + replant, `VeinMiner`, `TunnelTask`, `SchematicBuilder`
 - Helpers: auto-tool/armor, totem swap, chest sorting, trash filter, waypoints, survival handling via a shared `TaskQueue`
-- Stack: MC 1.21.9, Forge 59.0.5+, Java 21, Baritone v1.16.0 API, MIT-licensed, built via GitHub Actions
+- Stack: Java, Forge + Baritone API, MIT-licensed, built via GitHub Actions
 
 </details>
 
 <details>
 <summary><b>external-mctool — what's inside</b></summary>
 
-- Mod: Fabric client mod for 1.21.11, scans an 8-chunk radius (Y −64 to 64) every 10s for watched block IDs, streams matches + per-tick camera info as JSON
+- Mod: Fabric client mod for Minecraft 1.21.x, scans an 8-chunk radius (Y −64 to 64) every 10s for watched block IDs, streams matches + per-tick camera info as JSON
 - Overlay: C# WinForms app with a config window (block list, FOV, mirror mode, persisted settings) plus a transparent, click-through, always-on-top overlay that draws outlines around matches
 - Calibration: world-to-screen projection rebuilt per frame from camera yaw/pitch, works across resolutions and window modes
 
@@ -75,8 +75,8 @@ My working stack:
 
 ## 🔨 Currently working on
 
-- **BaritoneExtras** 🔒 (private) — client-side Baritone automation mod, most recently pushed work (Sep 2026)
-- **Dung** — combat-power difficulty tuning, room/corridor generation fixes, boss encounters (Sep 2026)
+- **BaritoneExtras** 🔒 (private) — client-side Baritone automation mod
+- **Dung** — dungeon content: difficulty tuning, room generation, boss encounters
 
 ---
 
