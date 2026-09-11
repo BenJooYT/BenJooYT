@@ -1,6 +1,6 @@
-# Hi, I'm BenJooYT 👋
+# Hi, I'm BenJooYT ⛏️
 
-Java / Kotlin developer building Minecraft gameplay systems, Android games, and small AI tools. Most of my work is systems-heavy stuff I actually run and play with — dungeon generators, game loops, overlays, keyboards.
+Minecraft developer building server-side gameplay systems, client mods, and tooling around the game. Most of my work is stuff I actually run and play with — dungeon generators, boss fights, automation, overlays.
 
 > 🔒 marks a private repo — no public link, so the description below is all there is to see.
 
@@ -10,9 +10,9 @@ Java / Kotlin developer building Minecraft gameplay systems, Android games, and 
 
 ## 🧾 About me
 
-- I build **Minecraft plugins/mods** (Paper, Fabric, Forge) with real game systems: procedural floors, combat stats, loot, bosses, automation.
-- I build **Android apps/games** in Java and Kotlin — custom rendering, IME keyboards, on-device AI experiments.
-- I like **technical toys**: projection math, Markov-chain music, LAN multiplayer, LLM tooling.
+- I build **server gameplay** (Paper): procedural dungeons, combat stats, loot, bosses, parties, persistent progression.
+- I build **client mods** (Forge, Fabric): automation on top of pathfinders, world scanning, inventory helpers.
+- I build **tooling around the game**: external overlays, projection math, build pipelines.
 - Currently on Android, developing with Termux + local repos and pushing when things compile.
 
 ---
@@ -22,14 +22,8 @@ Java / Kotlin developer building Minecraft gameplay systems, Android games, and 
 | Project | What it is | Stack | Status |
 |---|---|---|---|
 | [**Dung**](https://github.com/BenJooYT/Dung) — room-based dungeon roguelite for Paper 1.21.x | Branching Isaac-style floors (random-walk gen, locked-until-cleared rooms, boss per floor), SkyBlock-style stats/loot, parties, persistent coins/upgrades. Two telegraphed bosses (Warden, Grovekeeper), rarity-scaled gear with mana-gated abilities. | Java 21 · Paper API · Gradle · JUnit | 🛠️ In development — v1.5.1, last active Sep 2026 |
-| [**BSnake**](https://github.com/BenJooYT/BSnake) — Snake with teeth for Android | Arcade mode (32×32 toroidal grid, 4 boss snakes, upgrade cards, 20 challenge objectives) + Classic pure-snake mode. Custom Canvas renderer/game loop, swipe input queue, Markov-chain menu music + synth SFX, Wi-Fi LAN multiplayer, in-app update checker. Zero dependencies. | Java · Android SDK (Canvas) · Gradle | ✅ Playable — v1.8.0 release |
-| [**external-mctool**](https://github.com/BenJooYT/external-mctool) — block scanner: Fabric mod + external overlay | Fabric client mod scans an 8-chunk radius for watched block IDs and streams matches + camera data as JSON over `127.0.0.1:25566`; a C# WinForms app draws a transparent click-through overlay. Personal singleplayer project. | Java (Fabric) · C# (.NET 8 WinForms) | 🧪 Working prototype |
 | **BaritoneExtras** 🔒 Private — client-side Forge companion mod for Baritone | Automation loops and task chains on top of Baritone's pathfinder: loop-mining, obtain-chains (loot → mine → craft → smelt), farm/replant, inventory helpers, plus a point-and-click GUI. Server only ever sees normal player packets. | Java 21 · Forge 1.21.9 · Baritone API | 🛠️ In development — most recent pushes, Sep 2026 |
-| [**android-ai-ime**](https://github.com/BenJooYT/android-ai-ime) — AI-powered Android keyboard | Compose IME with conversation memory, switchable providers (CheaperInference), Room persistence, Hilt DI, privacy onboarding. | Kotlin · Compose · Room · Hilt · Retrofit | 🧪 Early / experimental |
-
-**Also tinkering:** [**open-jarvis**](https://github.com/BenJooYT/open-jarvis) — a fork of [`tokenarc/open-jarvis`](https://github.com/tokenarc/open-jarvis) (Android AI agent) where I've been fixing CI/build issues so the APK actually compiles. A fork, not my original project.
-
-**Parked idea:** [**yt-dlp-test**](https://github.com/BenJooYT/yt-dlp-test) — intended as an Android app for downloading videos via yt-dlp. The repo is public but currently empty — no code yet.
+| [**external-mctool**](https://github.com/BenJooYT/external-mctool) — block scanner: Fabric mod + external overlay | Fabric client mod scans an 8-chunk radius for watched block IDs and streams matches + camera data as JSON over `127.0.0.1:25566`; a C# WinForms app draws a transparent click-through overlay. Personal singleplayer project. | Java (Fabric) · C# (.NET 8 WinForms) | 🧪 Working prototype |
 
 <details>
 <summary><b>Dung — what's inside</b></summary>
@@ -54,13 +48,11 @@ Java / Kotlin developer building Minecraft gameplay systems, Android games, and 
 </details>
 
 <details>
-<summary><b>BSnake — what's inside</b></summary>
+<summary><b>external-mctool — what's inside</b></summary>
 
-- Modes: Arcade (bosses, progression, 3 cameras) + Classic (screen-filling board, static camera)
-- Bosses: CHASER, WALL_BUILDER (wall-capture by closed loop), HEALER, MIRROR (control-flipping fruit); spawn gap scales 100 → 400; cinematic death sequence + upgrade-card draft
-- Audio: procedural Markov-chain menu music (C major, 120 BPM), synthesized SFX, no audio thread stutter
-- Multiplayer: host/client over LAN (`GameServer` / `GameClient` / hotspot helper), with thread-safety fixes in 1.7.7
-- Meta: 20 arcade challenges (3 random per run), top-20 leaderboard, live color preview, dev mode, `version.json` update checker
+- Mod: Fabric client mod for 1.21.11, scans an 8-chunk radius (Y −64 to 64) every 10s for watched block IDs, streams matches + per-tick camera info as JSON
+- Overlay: C# WinForms app with a config window (block list, FOV, mirror mode, persisted settings) plus a transparent, click-through, always-on-top overlay that draws outlines around matches
+- Calibration: world-to-screen projection rebuilt per frame from camera yaw/pitch, works across resolutions and window modes
 
 </details>
 
@@ -71,16 +63,13 @@ Java / Kotlin developer building Minecraft gameplay systems, Android games, and 
 My working stack:
 
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white)
-![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?style=flat-square&logo=kotlin&logoColor=white)
 ![C#](https://img.shields.io/badge/C%23-239120?style=flat-square&logo=csharp&logoColor=white)
-![Android](https://img.shields.io/badge/Android-3DDC84?style=flat-square&logo=android&logoColor=white)
 ![Gradle](https://img.shields.io/badge/Gradle-02303A?style=flat-square&logo=gradle&logoColor=white)
 ![JUnit](https://img.shields.io/badge/JUnit-25A162?style=flat-square&logo=junit5&logoColor=white)
 
-- **Languages:** Java · Kotlin · C# · a little Shell for build scripts
-- **Minecraft:** Paper 1.21.x plugins (Java 21) · Fabric + Forge client mods · WorldEdit structures
-- **Android:** Canvas custom rendering + game loops · Compose UI · IME services · Room / DataStore / Hilt / Retrofit
-- **Desktop/tooling:** .NET 8 WinForms overlays · world-to-screen projection math · GitHub Actions APK builds
+- **Languages:** Java · C# · a little Shell for build scripts
+- **Minecraft:** Paper 1.21.x plugins · Fabric + Forge client mods · Baritone API · WorldEdit structures
+- **Tooling:** WinForms overlays + world-to-screen projection math · GitHub Actions builds · JUnit gameplay harnesses
 
 ---
 
@@ -88,14 +77,12 @@ My working stack:
 
 - **BaritoneExtras** 🔒 (private) — client-side Baritone automation mod, most recently pushed work (Sep 2026)
 - **Dung** — combat-power difficulty tuning, room/corridor generation fixes, boss encounters (Sep 2026)
-- **Android games** — BSnake 1.8.x stability (multiplayer thread safety, boss balance)
-- **Local AI tooling** — Android IME + on-device agent experiments, keeping forks building
 
 ---
 
 ## 🔗 Links
 
 - GitHub: **[@BenJooYT](https://github.com/BenJooYT)**
-- Pinned starting points: [Dung](https://github.com/BenJooYT/Dung) · [BSnake](https://github.com/BenJooYT/BSnake) · [external-mctool](https://github.com/BenJooYT/external-mctool) · [android-ai-ime](https://github.com/BenJooYT/android-ai-ime)
+- Pinned starting points: [Dung](https://github.com/BenJooYT/Dung) · [external-mctool](https://github.com/BenJooYT/external-mctool)
 
 _Just GitHub — no email, site, or socials listed._
