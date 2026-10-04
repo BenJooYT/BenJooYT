@@ -70,6 +70,7 @@ My working stack:
 - **Languages:** Java · C# · a little Shell for build scripts
 - **Minecraft:** Paper 1.21.x plugins · Fabric + Forge client mods · Baritone API · WorldEdit structures
 - **Tooling:** WinForms overlays + world-to-screen projection math · GitHub Actions builds · JUnit gameplay harnesses
+- **Also in rotation:** Kotlin (Android) · Python (LAN game servers) · JavaScript (browser games, small sites) · GDScript / Godot · Luau (learning)
 
 ---
 
@@ -84,5 +85,6 @@ My working stack:
 
 - GitHub: **[@BenJooYT](https://github.com/BenJooYT)**
 - Pinned starting points: [Dung](https://github.com/BenJooYT/Dung) · [external-mctool](https://github.com/BenJooYT/external-mctool)
+- Workshop site (games, projects, lab notes): **[lieyabull-site](https://benjooyt.github.io/lieyabull-site/)**
 
-_Just GitHub — no email, site, or socials listed._
+_GitHub + the workshop site — no email or socials listed._
